@@ -8,6 +8,7 @@ class ClassnotesController < ApplicationController
 
   # GET /classnotes/1 or /classnotes/1.json
   def show
+    @classnote = Classnote.find(params[:id])
   end
 
   # GET /classnotes/new
