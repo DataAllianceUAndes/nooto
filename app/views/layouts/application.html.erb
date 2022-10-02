@@ -9,7 +9,16 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body align="center">
+    <% if notice %>
+      <p class="alert alert-success" style="color: green"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger" style="color: red"><%= alert %></p>
+    <% end %>
+    <div class="container">
+      <%= yield %>
+    </div>
+
   </body>
 </html>
