@@ -1,0 +1,12 @@
+<h1>Classnotes</h1>
+
+<div id="classnotes">
+  <% @classnotes.each do |classnote| %>
+    <%= render classnote %>
+    <p>
+      <%= link_to "Show this classnote", classnote %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New classnote", new_classnote_path %>
