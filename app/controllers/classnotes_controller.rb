@@ -3,7 +3,8 @@ class ClassnotesController < ApplicationController
 
   # GET /classnotes or /classnotes.json
   def index
-    @classnotes = Classnote.all
+    @q = Classnote.ransack(params[:q])
+    @classnotes = @q.result
   end
 
   # GET /classnotes/1 or /classnotes/1.json
@@ -23,6 +24,8 @@ class ClassnotesController < ApplicationController
   # POST /classnotes or /classnotes.json
   def create
     @classnote = Classnote.new(classnote_params)
+    @classnote.user_id = current_user.id
+    @classnote.course_id = classnote_params[:course_id]
 
     respond_to do |format|
       if @classnote.save
@@ -59,13 +62,14 @@ class ClassnotesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_classnote
-      @classnote = Classnote.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def classnote_params
-      params.require(:classnote).permit(:title)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_classnote
+    @classnote = Classnote.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def classnote_params
+    params.require(:classnote).permit(:title, :user_id, :course_id, files: [])
+  end
 end

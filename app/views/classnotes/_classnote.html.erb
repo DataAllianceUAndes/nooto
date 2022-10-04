@@ -1,7 +1,14 @@
-<div id="<%= dom_id classnote %>">
+<div>
   <p>
     <strong>Title:</strong>
     <%= classnote.title %>
   </p>
 
+    <div>
+      <% if @classnote.files.present? %>
+          <% @classnote.files.each do |file| %>
+            <%= link_to file.filename.to_s, url_for(file) %>
+          <% end %>
+      <% end %>
+    </div>
 </div>

@@ -17,6 +17,16 @@
   </div>
 
   <div>
+    <%= form.label :course_id, style: "display: block" %>
+    <%= form.select :course_id, options_for_select(Course.all.map{|i|[i.title, i.id]}) %>
+  </div>
+
+  <div>
+    <%= form.label :files %>
+    <%= form.file_field :files, :multiple => true %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
