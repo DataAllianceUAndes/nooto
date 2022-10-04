@@ -5,6 +5,7 @@ class ClassnotesController < ApplicationController
   def index
     @q = Classnote.ransack(params[:q])
     @classnotes = @q.result
+    @pagy, @classnotes = pagy(@classnotes)
   end
 
   # GET /classnotes/1 or /classnotes/1.json
