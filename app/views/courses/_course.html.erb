@@ -1,7 +1,11 @@
-<div id="<%= dom_id course %>">
+<div>
   <p>
     <strong>Title:</strong>
     <%= course.title %>
+  </p>
+  <p>
+    <strong>Owner:</strong>
+    <%= course.user.first_name %>
   </p>
 
 </div>

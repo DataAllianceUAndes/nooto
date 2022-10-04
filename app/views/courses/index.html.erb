@@ -1,14 +1,9 @@
-<p style="color: green"><%= notice %></p>
+<h1 style="text-align: left">Courses</h1>
 
-<h1>Courses</h1>
-
-<div id="courses">
-  <% @courses.each do |course| %>
-    <%= render course %>
-    <p>
-      <%= link_to "Show this course", course %>
-    </p>
-  <% end %>
+<div class="max-w-7xl mx-auto mt-12">
+  <%= render "courses", courses: @courses %>
 </div>
 
-<%= link_to "New course", new_course_path %>
+<div style="text-align: center">
+  <%= link_to "New course", new_course_path %>
+</div>
