@@ -8,3 +8,7 @@
 
   <%= button_to "Destroy this course", @course, method: :delete %>
 </div>
+
+<div>
+  <%= render "classnotes/classnotes", locals: {classnotes: @classnotes} %>
+</div>
