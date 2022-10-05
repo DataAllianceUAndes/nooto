@@ -9,6 +9,10 @@ class UsersController < ApplicationController
   # GET /users/1 or /users/1.json
   def show
     @user = User.find(params[:id])
+
+    @q = Classnote.ransack(params[:q])
+    @classnotes = Classnote.where(user_id: @user.id)
+    @pagy, @classnotes = pagy(@classnotes)
   end
 
   # GET /users/new
