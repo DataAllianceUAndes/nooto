@@ -20,9 +20,23 @@
   <% @classnotes.each do |classnote| %>
     <tr>
       <td><%= classnote.id %></td>
-      <td><%= classnote.title %></td>
-      <td><%= classnote.course.title %></td>
-      <td><%= classnote.user_id.nil? ? "NIL" : classnote.user.first_name %></td>
+      <td>
+        <%= link_to classnote_path(classnote), style: "text-decoration: none" do %>
+          <i style="color: black; font-style: normal">
+            <%= classnote.title %></i>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to course_path(classnote.course), style: "text-decoration: none" do %>
+          <i style="color: black; font-style: normal">
+            <%= classnote.course.title %></i>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to user_path(classnote.user), style: "text-decoration:none" do %>
+          <i style="color: black; font-style: normal">
+            <%= classnote.user.first_name + ' ' + classnote.user.last_name %></i>
+        <% end %>
       <td>
         <%= link_to classnote_path(classnote) do %>
           <i class="bi bi-arrow-right" style="color: black"></i>
