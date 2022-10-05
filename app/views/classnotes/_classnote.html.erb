@@ -5,8 +5,8 @@
   </p>
 
     <div>
-      <% if @classnote.files.present? %>
-          <% @classnote.files.each do |file| %>
+      <% if classnote.files.present? %>
+          <% classnote.files.each do |file| %>
             <%= link_to file.filename.to_s, url_for(file) %>
           <% end %>
       <% end %>
