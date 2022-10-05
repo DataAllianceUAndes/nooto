@@ -1,2 +1,22 @@
-<div id="<%= dom_id user %>">
+<div>
+  <p>
+    <strong>Full name:</strong>
+    <%= user.first_name + user.last_name %>
+  </p>
+  <p>
+    <strong>Email:</strong>
+    <%= user.email %>
+  </p>
+  <p>
+    <strong>Role:</strong>
+    <%= user.role %>
+  </p>
+  <p>
+    <strong>Score:</strong>
+    <%= user.score %>
+  </p>
+</div>
+
+<div>
+  <% render user.classnotes %>
 </div>

@@ -8,3 +8,7 @@
 
   <%= button_to "Destroy this user", @user, method: :delete %>
 </div>
+
+<div>
+  <%= render "classnotes/classnotes", locals: {classnotes: @classnotes} %>
+</div>
