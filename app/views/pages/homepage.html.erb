@@ -5,8 +5,20 @@
     <title>Nooto</title>
 </head>
 <body>
-  <div style="text-align: center;">
-    Hello World!
+  <div style="float: left; text-align: left;">
+    <% if user_signed_in? %>
+      <h4 style="color: black; font-style: normal"> Mi Biblioteca</h4>
+      <p style="text-indent: 50px; color: black; font-style: normal; font-weight: bold;"> Mis Favoritos</p>
+      <p style="text-indent: 50px; color: black; font-style: normal; font-weight: bold;"> Ramos recientemente vistos</p>
+    <% else %>
+      <div style="position: absolute; text-align:center; top: 50%; left: 50%; -moz-transform: translateX(-50%) translateY(-50%); -webkit-transform: translateX(-50%) translateY(-50%); transform: translateX(-50%) translateY(-50%);">
+        <h1>
+          Bienvenido a Nooto, </br>
+          registrate o inicia sesion para 
+          ver tus ramos favoritos
+        </h1>
+      </div>
+    <% end %>
   </div>
 </body>
 </html>
