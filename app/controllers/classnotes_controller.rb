@@ -1,5 +1,6 @@
 class ClassnotesController < ApplicationController
   before_action :set_classnote, only: %i[ show edit update destroy ]
+  load_and_authorize_resource
 
   # GET /classnotes or /classnotes.json
   def index
