@@ -13,6 +13,7 @@
     <th><%= sort_link(@q, :course_title, 'Course', style: "color: black") %></th>
     <th><%= sort_link(@q, :user_first_name, 'User', style: "color: black") %></th>
     <th>Show</th>
+    <th>Download</th>
 
   </tr>
   </thead>
@@ -40,6 +41,11 @@
       <td>
         <%= link_to classnote_path(classnote) do %>
           <i class="bi bi-arrow-right" style="color: black"></i>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to classnote_path(classnote), download: classnote.title do %>
+          <i class="bi bi-arrow-down" style="color: black"></i>
         <% end %>
       </td>
     </tr>
