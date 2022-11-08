@@ -5,8 +5,12 @@
 </div>
 
 <div>
-  <%= link_to "Edit this course", edit_course_path(@course) %> |
+  <% if current_user.id == @user %>
+    <%= link_to "Edit this course", edit_course_path(@course) %> |
+  <% end %>
   <%= link_to "Back to courses", courses_path %>
 
-  <%= button_to "Destroy this course", @course, method: :delete %>
+  <% if current_user.id == @user %>
+    <%= button_to "Destroy this course", @course, method: :delete %>
+  <% end %>
 </div>

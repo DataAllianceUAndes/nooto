@@ -9,7 +9,7 @@ class Ability
       can :read, Classnote
       can [:create, :update, :destroy], Classnote, user: user
       can :read, Course
-      can [:create, :update], Course, user: user
+      can [:create, :update, :destroy], Course, user: user
       can :read, Enrollment
       can [:create, :update], Enrollment, user: user
       can :read, User
