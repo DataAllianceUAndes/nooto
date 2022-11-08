@@ -1,8 +1,13 @@
 <%= render @classnote %>
 
 <div>
-  <%= link_to "Edit this classnote", edit_classnote_path(@classnote) %> |
+  <% if current_user.id == @user %>
+    <%= link_to "Edit this classnote", edit_classnote_path(@classnote) %> |
+  <% end %>
+
   <%= link_to "Back to classnotes", classnotes_path %>
 
-  <%= button_to "Destroy this classnote", @classnote, method: :delete %>
+  <% if current_user.id == @user %>
+    <%= button_to "Destroy this classnote", @classnote, method: :delete %>
+  <% end %>
 </div>

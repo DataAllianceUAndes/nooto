@@ -7,7 +7,7 @@ class Ability
     can :create, User
     return unless user.present?
       can :read, Classnote
-      can [:update, :destroy], Classnote, user: user
+      can [:create, :update, :destroy], Classnote, user: user
       can :read, Course
       can [:create, :update], Course, user: user
       can :read, Enrollment
