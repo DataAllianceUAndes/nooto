@@ -6,5 +6,5 @@
   <%= link_to "Edit this review", edit_classnote_review_path(@classnote) %> |
   <%= link_to "Back to reviews", classnote_reviews_path %>
 
-  <%= button_to "Destroy this review", @review, method: :delete %>
+  <%= button_to "Destroy this review", classnote_review_path(@classnote, @review), method: :delete, data: {confirm: 'are you sure?'} %>
 </div>
