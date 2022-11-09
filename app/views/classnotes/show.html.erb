@@ -6,6 +6,7 @@
   <% end %>
 
   <%= link_to "Back to classnotes", classnotes_path %>
+  <%= link_to "Reviews and ratings", classnote_reviews_path(@classnote) %>
 
   <% if current_user.id == @user %>
     <%= button_to "Destroy this classnote", @classnote, method: :delete %>

@@ -1,4 +1,4 @@
-<%= form_with(model: review) do |form| %>
+<%= form_with(model: review, url: [@classnote, review]) do |form| %>
   <% if review.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>

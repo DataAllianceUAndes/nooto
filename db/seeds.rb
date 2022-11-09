@@ -46,7 +46,7 @@ end
 
 15.times do 
   Review.create(
-    rating: rand(6),
+    rating: [0,1,2,3,4,5].sample,
     comment: Faker::Games::LeagueOfLegends.quote,
     classnote_id: Classnote.all.sample.id
   )

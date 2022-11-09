@@ -6,9 +6,12 @@
   <% @reviews.each do |review| %>
     <%= render review %>
     <p>
-      <%= link_to "Show this review", review %>
+      <%= link_to "Show this review", [@classnote, review] %>
+    </p>
+    <p>
+      <%= link_to 'Show Classnote', [@classnote] %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New review", new_review_path %>
+<%= link_to "New review", new_classnote_review_path %>
