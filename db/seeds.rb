@@ -24,6 +24,7 @@ end
   )
 end
 
+
 # each user can enroll once in each course
 # each course can have multiple students
 # each student can enroll in multiple courses
@@ -41,6 +42,14 @@ end
     title: Faker::File.file_name,
     user_id: User.all.sample.id,
     course_id: Course.all.sample.id)
+end
+
+15.times do 
+  Review.create(
+    rating: rand(6),
+    comment: Faker::Games::LeagueOfLegends.quote,
+    classnote_id: Classnote.all.sample.id
+  )
 end
 
 User.create(
