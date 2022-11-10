@@ -48,7 +48,8 @@ end
   Review.create(
     rating: [0,1,2,3,4,5].sample,
     comment: Faker::Games::LeagueOfLegends.quote,
-    classnote_id: Classnote.all.sample.id
+    classnote_id: Classnote.all.sample.id,
+    user_id: User.all.sample.id
   )
 end
 

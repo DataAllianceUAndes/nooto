@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # Associations
+  has_many :reviews
   has_many :classnotes
   has_many :courses
   has_many :enrollments
