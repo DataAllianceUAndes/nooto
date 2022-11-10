@@ -13,6 +13,11 @@ class ClassnotesController < ApplicationController
   def show
     @classnote = Classnote.find(params[:id])
     @user = User.find(@classnote.user_id)
+    if @classnote.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @classnote.reviews.average(:rating)
+    end
   end
 
   # GET /classnotes/new
