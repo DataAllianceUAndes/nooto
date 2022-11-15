@@ -1,0 +1,20 @@
+<div>
+  <p>
+    <strong>Title:</strong>
+    <%= classnote.title %>
+  </p>
+
+    <div>
+      <% if classnote.files.present? %>
+        <% classnote.files.each do |file| %>
+          <% if file.previewable? %>
+            <% if file.representable? %>
+              <div>
+              <iframe src="<%= rails_blob_path(file, disposition: :inline) %>" height="700" width="1000"></iframe>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+</div>

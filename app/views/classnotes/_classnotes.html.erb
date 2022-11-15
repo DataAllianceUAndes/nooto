@@ -1,0 +1,65 @@
+<div style="float: left; text-align: left">
+  <%= search_form_for @q do |f| %>
+    <%= f.search_field :title_or_user_first_name_or_course_title_cont %>
+    <%= f.submit name: '' %>
+  <% end %>
+</div>
+
+<table class="table" id="classnotes-table">
+  <thead>
+  <tr>
+    <th><%= sort_link(@q, :id, 'id', style: "color: black") %></th>
+    <th><%= sort_link(@q, :title, 'Title', style: "color: black") %></th>
+    <th><%= sort_link(@q, :course_title, 'Course', style: "color: black") %></th>
+    <th><%= sort_link(@q, :user_first_name, 'User', style: "color: black") %></th>
+    <th>Show</th>
+    <th>Download</th>
+    <th>Favorite</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @classnotes.each do |classnote| %>
+    <tr>
+      <td><%= classnote.id %></td>
+      <td>
+        <%= link_to classnote_path(classnote), style: "text-decoration: none" do %>
+          <i style="color: black; font-style: normal">
+            <%= classnote.title %></i>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to course_path(classnote.course), style: "text-decoration: none" do %>
+          <i style="color: black; font-style: normal">
+            <%= classnote.course.title %></i>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to user_path(classnote.user), style: "text-decoration:none" do %>
+          <i style="color: black; font-style: normal">
+            <%= classnote.user.first_name + ' ' + classnote.user.last_name %></i>
+        <% end %>
+      <td>
+        <%= link_to classnote_path(classnote) do %>
+          <i class="bi bi-arrow-right" style="color: black"></i>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to classnote_path(classnote), download: classnote.title do %>
+          <i class="bi bi-download" style="color: black"></i>
+        <% end %>
+      </td>
+      <td>
+        <% if classnote.favorites.find_by(user: current_user)%>
+        <%= button_to "💔", Favorite.find_by(user: current_user.id, classnote: classnote.id), method: :delete %>
+        <% else %>
+        <%= button_to "❤️", favorites_path(:favorite => {user_id: current_user.id, classnote_id: classnote.id}), method: :post %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div style="justify-content: left">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>

@@ -1,0 +1,36 @@
+<div style="float: left; text-align: left">
+  <%= search_form_for @q do |f| %>
+    <%= f.search_field :title_or_user_first_name_cont %>
+    <%= f.submit name: '' %>
+  <% end %>
+</div>
+
+<table class="table" id="courses-table">
+  <thead>
+    <tr>
+      <th><%= sort_link(@q, :id, 'id', style: "color: black") %></th>
+      <th><%= sort_link(@q, :title, 'Title', style: "color: black") %></th>
+      <th><%= sort_link(@q, :user_first_name, 'User', style: "color: black") %></th>
+      <th>Show</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <% @courses.each do |course| %>
+    <tr>
+      <td><%= course.id %></td>
+      <td><%= course.title %></td>
+      <td><%= course.user_id.nil? ? "NIL" : course.user.first_name %></td>
+      <td>
+        <%= link_to course_path(course) do %>
+          <i class="bi bi-arrow-right" style="color: black"></i>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<div style="justify-content: left">
+  <%== pagy_bootstrap_nav(@pagy) %>
+</div>
