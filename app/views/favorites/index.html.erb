@@ -1,14 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Favorites</h1>
-
+<% if user_signed_in? %>
 <div id="favorites">
   <% @favorites.each do |favorite| %>
+    <% if favorite.user_id == current_user.id %>
     <%= render favorite %>
     <p>
-      <%= link_to "Show this favorite", favorite %>
+      <%= link_to "Show this classnote", Classnote.find_by(id: favorite.classnote_id) %>
     </p>
+    <% end %>
   <% end %>
 </div>
-
-<%= link_to "New favorite", new_favorite_path %>
+<% else %>
+  <p>sign in to watch your favorites classnotes</p>
+<% end %>

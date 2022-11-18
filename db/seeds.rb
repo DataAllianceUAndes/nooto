@@ -13,7 +13,7 @@
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: '123456',
-    role: 'student'
+    role: 0
   )
 end
 
@@ -58,5 +58,13 @@ User.create(
   last_name: 'Maluk',
   email: 'admin@admin.com',
   password: '123456',
-  role: 'admin'
+  role: 1
+)
+
+User.create(
+  first_name: "Nicolás",
+  last_name: 'González',
+  email: 'user@user.com',
+  password: '123456',
+  role: 0
 )
