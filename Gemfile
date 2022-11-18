@@ -65,7 +65,7 @@ gem 'ransack'
 # Use pagy for pagination
 gem 'pagy'
 
-# Use cancancan for autherization
+# Use cancancan for authorization
 gem 'cancancan'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
