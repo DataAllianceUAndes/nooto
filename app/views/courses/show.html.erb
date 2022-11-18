@@ -5,12 +5,12 @@
 </div>
 
 <div>
-  <% if current_user.id == @user %>
+  <% if current_user.id == @user or current_user.role == 1 %>
     <%= link_to "Edit this course", edit_course_path(@course) %> |
   <% end %>
   <%= link_to "Back to courses", courses_path %>
 
-  <% if current_user.id == @user %>
-    <%= button_to "Destroy this course", @course, method: :delete %>
+  <% if current_user.id == @user or current_user.role == 1 %>
+    <%= button_to "Destroy this course", @course, method: :delete, class: "btn btn-danger" %>
   <% end %>
 </div>

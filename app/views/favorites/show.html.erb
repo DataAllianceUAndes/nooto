@@ -6,5 +6,5 @@
   <%= link_to "Edit this favorite", edit_favorite_path(@favorite) %> |
   <%= link_to "Back to favorites", favorites_path %>
 
-  <%= button_to "Destroy this favorite", @favorite, method: :delete %>
+  <%= button_to "Destroy this favorite", @favorite, method: :delete, class: "btn btn-danger" %>
 </div>
