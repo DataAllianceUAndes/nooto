@@ -60,3 +60,11 @@ User.create(
   password: '123456',
   role: 'admin'
 )
+
+User.create(
+  first_name: "Nicolás",
+  last_name: 'González',
+  email: 'user@user.com',
+  password: '123456',
+  role: 'user'
+)
