@@ -8,12 +8,14 @@
     "bootstrap": "^5.2.1",
     "bootstrap-icons": "^1.9.1",
     "debounce": "^1.2.1",
+    "esbuild": "^0.15.14",
     "sass": "^1.55.0",
     "stimulus_reflex": "3.4.1",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
   "scripts": {
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds",
     "build:css": "sass ./app/assets/stylesheets/application.bootstrap.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   },
   "devDependencies": {

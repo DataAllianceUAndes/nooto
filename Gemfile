@@ -46,6 +46,9 @@ gem 'bootsnap', require: false
 # CSSBundling
 gem 'cssbundling-rails'
 
+# JSBundling
+gem 'jsbundling-rails'
+
 # Use bootstrap for styling
 gem 'bootstrap'
 
@@ -55,8 +58,6 @@ gem 'sassc-rails'
 # Use devise for authentication
 gem 'devise'
 
-# Use webpacker for javascript
-gem 'webpacker'
 
 
 # Use ransack for search and sorting
