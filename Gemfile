@@ -58,13 +58,16 @@ gem 'devise'
 # Use webpacker for javascript
 gem 'webpacker'
 
+
 # Use ransack for search and sorting
 gem 'ransack'
 
 # Use pagy for pagination
 gem 'pagy'
 
+# Use cancancan for autherization
 gem 'cancancan'
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing"
 

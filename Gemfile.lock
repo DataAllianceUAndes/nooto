@@ -306,7 +306,6 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pagy
-  pg (~> 1.2)
   puma (~> 5.0)
   rails (~> 7.0.4)
   ransack
